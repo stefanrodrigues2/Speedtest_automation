@@ -27,12 +27,6 @@ def runSpeedTestAppAutomation():
     action = TouchAction(driver)
     action.tap(element).perform()
     start = time.time()  
-    #time.sleep(45)
-    element_new = None
-	
-    #while element_new is None:
-     #   element_new = driver.find_element_by_id('org.zwanoo.android.speedtest:id/shareIcon')
-    #action.tap(element_new).perform()
     WebDriverWait(driver, 45).until(EC.presence_of_element_located((By.ID, "org.zwanoo.android.speedtest:id/shareIcon")))
     final = time.time()
     print "Time taken is {}\n".format(final-start)
